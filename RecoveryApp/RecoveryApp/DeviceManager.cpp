@@ -38,7 +38,11 @@ void CDeviceManager::printPhysicalDevices()
 		//First call of SetupDiGetDeviceInterfaceDetail gets the size, the second call gets the information
 		ret = SetupDiGetDeviceInterfaceDetail(diskDevices, &deviceInterfaceData, NULL, 0, &size, NULL);
 		
-		//TODO: Log error on ret
+		//if error
+		if ((ret == FALSE) && (GetLastError() != ERROR_INSUFFICIENT_BUFFER)) {
+			LOG_INFO("SetupDiGetDeviceInterfaceDetail failed!");
+			continue;
+		}
 
 		deviceInterfaceDetailData = (PSP_DEVICE_INTERFACE_DETAIL_DATA)malloc(size);
 
@@ -47,15 +51,27 @@ void CDeviceManager::printPhysicalDevices()
 
 		ret = SetupDiGetDeviceInterfaceDetail(diskDevices, &deviceInterfaceData, deviceInterfaceDetailData, size, NULL, NULL);
 
-		//TODO: Log error on ret
+		//if error
+		if (ret == FALSE) {
+			LOG_INFO("SetupDiGetDeviceInterfaceDetail failed!");
+			continue;
+		}
 
 		HANDLE disk = CreateFile(deviceInterfaceDetailData->DevicePath, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-		GetLastError();
-		//TODO: Log error on disk
+		
+		//if error
+		if (INVALID_HANDLE_VALUE == disk) {
+			LOG_ERROR("Failed to CreateFile!");
+			continue;
+		}
 
 		ret = DeviceIoControl(disk, IOCTL_STORAGE_GET_DEVICE_NUMBER, NULL, 0, &diskNumber, sizeof(STORAGE_DEVICE_NUMBER), &bytesReturned, NULL);
 	
-		//TODO: Log error on ret
+		//if error
+		if (ret == 0) {
+			LOG_ERROR("DeviceIoControl failed!");
+			continue;
+		}
 
 		printf("PhysicalDrive %lu\n", diskNumber.DeviceNumber);
 	}
