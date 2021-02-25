@@ -18,6 +18,7 @@ void CDeviceManager::printPhysicalDevices()
 	DWORD size;
 	BOOL ret = FALSE;
 	STORAGE_DEVICE_NUMBER diskNumber;
+	STORAGE_DEVICE_DESCRIPTOR properties;
 	DWORD bytesReturned;
 
 	diskDevices = SetupDiGetClassDevs(
@@ -73,7 +74,16 @@ void CDeviceManager::printPhysicalDevices()
 			continue;
 		}
 
+		ret = DeviceIoControl(disk, IOCTL_STORAGE_QUERY_PROPERTY, NULL, 0, &properties, sizeof(STORAGE_DEVICE_DESCRIPTOR), &bytesReturned, NULL);
+
+		//if error
+		if (ret == 0) {
+			LOG_ERROR("DeviceIoControl failed!");
+			continue;
+		}
+
 		printf("PhysicalDrive %lu\n", diskNumber.DeviceNumber);
+		printf("Device Type %d\n", properties.DeviceType);
 	}
 }
 
