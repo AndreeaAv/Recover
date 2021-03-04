@@ -1,2 +1,12 @@
 ﻿  DeviceManager.cpp
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(128,10): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'LONGLONG'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(128,10): message : consider using '%llu' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(128,10): message : consider using '%Iu' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(128,10): message : consider using '%I64u' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(135,11): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(136,11): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(137,11): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'GUID'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(152,21): warning C4018: '<': signed/unsigned mismatch
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(203,20): warning C4018: '<': signed/unsigned mismatch
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(28,39): warning C4101: 'fileSystem': unreferenced local variable
   RecoveryApp.vcxproj -> E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\x64\Debug\RecoveryApp.exe
