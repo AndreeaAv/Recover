@@ -8,14 +8,14 @@
 using namespace std;
 
 class CDeviceManager {
-protected:
-	list<string> physicalDevices;
 public:
 	CDeviceManager();
-
 	void printPhysicalDevices();
 	
 private:
-	BOOL getPhysicalDevices();
+	void getDiskInfo(HANDLE diskHandle);
+	void getPartitionsInfo(HANDLE diskHandle);
+	void checkCurrentPartition(HANDLE diskHandle,TCHAR currentDriveLetter);
+	void printPartitionType(TCHAR currentDriveLetter);
 
 };
