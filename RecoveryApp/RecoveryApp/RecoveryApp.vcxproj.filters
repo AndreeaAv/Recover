@@ -21,12 +21,18 @@
     <ClCompile Include="DeviceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CPartition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeviceManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPartition.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -81,7 +81,6 @@ void CDeviceManager::printPhysicalDevices()
 
 void CDeviceManager::getDiskInfo(HANDLE diskHandle)
 {
-
 	DWORD bytesReturned;
 	STORAGE_DEVICE_NUMBER diskNumber;
 	BOOL ret = FALSE;

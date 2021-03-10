@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CPartition.cpp" />
     <ClCompile Include="DeviceManager.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CPartition.h" />
     <ClInclude Include="DeviceManager.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
