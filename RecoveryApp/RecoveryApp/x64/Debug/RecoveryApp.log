@@ -1,3 +1,22 @@
 ﻿  CPartition.cpp
-E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(76,8): warning C4101: 'bytesRead': unreferenced local variable
-  RecoveryApp.vcxproj -> E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\x64\Debug\RecoveryApp.exe
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6,21): error C2011: 'Task': 'struct' type redefinition
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(24,1): error C2027: use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(23,6): error C2027: use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(25,7): error C2079: 'task' uses undefined struct 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(42,10): error C2027: use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(42,31): error C2664: 'void putTask(Task)': cannot convert argument 1 from 'Task' to 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(42,31): message : use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6,16): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(13,6): message : see declaration of 'putTask'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(144,12): error C2027: use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(144,23): error C2664: 'void putTask(Task)': cannot convert argument 1 from 'Task' to 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(144,23): message : use of undefined type 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(6,16): message : see declaration of 'Task'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\Workers.h(13,6): message : see declaration of 'putTask'
+  Main.cpp
+  Generating Code...

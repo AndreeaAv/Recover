@@ -1,2 +1,42 @@
-﻿  DeviceManager.cpp
-  RecoveryApp.vcxproj -> E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\Debug\RecoveryApp.exe
+﻿  CPartition.cpp
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(104,8): warning C4101: 'bytesRead': unreferenced local variable
+  DeviceManager.cpp
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(72,21): warning C4018: '<': signed/unsigned mismatch
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'LONGLONG'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): message : consider using '%llu' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): message : consider using '%I64u' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(152,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(153,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(154,10): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'GUID'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(210,18): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
+  Workers.c
+CPartition.obj : error LNK2019: unresolved external symbol "void __cdecl forceShutDownWorkers(void)" (?forceShutDownWorkers@@YAXXZ) referenced in function "void __cdecl search(void *,int)" (?search@@YAXPAXH@Z)
+    Hint on symbols that are defined and could potentially match:
+      _forceShutDownWorkers
+CPartition.obj : error LNK2019: unresolved external symbol "void __cdecl putTask(struct Task)" (?putTask@@YAXUTask@@@Z) referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+    Hint on symbols that are defined and could potentially match:
+      _putTask
+CPartition.obj : error LNK2019: unresolved external symbol "void __cdecl startWorkers(void)" (?startWorkers@@YAXXZ) referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+    Hint on symbols that are defined and could potentially match:
+      _startWorkers
+CPartition.obj : error LNK2019: unresolved external symbol "void __cdecl joinWorkerThreads(void)" (?joinWorkerThreads@@YAXXZ) referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+    Hint on symbols that are defined and could potentially match:
+      _joinWorkerThreads
+CPartition.obj : error LNK2019: unresolved external symbol "private: static struct Task __cdecl CPartition::makeTask(int)" (?makeTask@CPartition@@CA?AUTask@@H@Z) referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+CPartition.obj : error LNK2001: unresolved external symbol "int gotTasks" (?gotTasks@@3HA)
+    Hint on symbols that are defined and could potentially match:
+      _gotTasks
+CPartition.obj : error LNK2001: unresolved external symbol "int putTasks" (?putTasks@@3HA)
+    Hint on symbols that are defined and could potentially match:
+      _putTasks
+Workers.obj : error LNK2019: unresolved external symbol __imp__pthread_create referenced in function _startWorkers
+Workers.obj : error LNK2019: unresolved external symbol __imp__pthread_join referenced in function _joinWorkerThreads
+Workers.obj : error LNK2019: unresolved external symbol __imp__pthread_mutex_init referenced in function _startWorkers
+Workers.obj : error LNK2019: unresolved external symbol __imp__pthread_mutex_lock referenced in function _forceShutDownWorkers
+Workers.obj : error LNK2019: unresolved external symbol __imp__pthread_mutex_unlock referenced in function _forceShutDownWorkers
+Workers.obj : error LNK2019: unresolved external symbol __imp__sem_init referenced in function _startWorkers
+Workers.obj : error LNK2019: unresolved external symbol __imp__sem_wait referenced in function _getTask
+Workers.obj : error LNK2019: unresolved external symbol __imp__sem_post referenced in function _forceShutDownWorkers
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\Debug\RecoveryApp.exe : fatal error LNK1120: 15 unresolved externals

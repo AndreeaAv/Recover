@@ -2,6 +2,7 @@
 #include <string>
 #include "CPartition.h"
 #include "Utils.h"
+#include "Workers.h"
 
 using namespace std;
 
@@ -14,6 +15,35 @@ LARGE_INTEGER intToLargeInt(int i) {
 void CPartition::setPartitionLetter(char letter)
 {
 	partitionLetter = letter;
+}
+
+
+void search(void* data, int thread_id);
+
+Task makeTask(int i)
+{
+	Task task;
+	int* newData = (int*)malloc(sizeof(int));
+	newData[0] = i;
+	task.data = newData;
+	task.runTask = search;
+	return task;
+}
+
+void search(void* data, int thread_id)
+{
+	int task_id = *(int*)data;
+	if (task_id > 8) {
+		forceShutDownWorkers();
+		return;
+	}
+
+	printf("Something %i from thread %i\n", task_id, thread_id);
+	putTask(makeTask(task_id + 1));
+}
+
+CPartition::CPartition()
+{
 }
 
 void CPartition::writeBitmap(HANDLE PHandle)
@@ -67,6 +97,7 @@ void CPartition::writeBitmap(HANDLE PHandle)
 
 }
 
+
 void CPartition::readPartition()
 {
 	TCHAR drivePath[8];
@@ -91,8 +122,8 @@ void CPartition::readPartition()
 
 	//-----------------------------------------------------------------------
 
+	startWorkers();
 
-	
 	for (bytesCount = 0;bytesCount < bytesInVolume;bytesCount+= 4096 * 1024)
 	{
 		dwRet = ReadFile(PHandle, buffer, 4096 * 1024, &dwBytesRead, NULL);
@@ -110,9 +141,10 @@ void CPartition::readPartition()
 		}
 		else {
 			printf("Bytes Read = %d\n", dwBytesRead);
+			putTask(makeTask(0));
 		}
 	}
-	
+	joinWorkerThreads();
 	CloseHandle(PHandle);
 
 }
