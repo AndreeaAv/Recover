@@ -1,8 +1,8 @@
+#pragma once
 #include <stdio.h>
 #include <string>
 #include "CPartition.h"
 #include "Utils.h"
-#include "Workers.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ void CPartition::setPartitionLetter(char letter)
 
 void search(void* data, int thread_id);
 
-Task makeTask(int i)
+Task CPartition::makeTask(int i)
 {
 	Task task;
 	int* newData = (int*)malloc(sizeof(int));
@@ -30,7 +30,7 @@ Task makeTask(int i)
 	return task;
 }
 
-void search(void* data, int thread_id)
+void CPartition::search(void* data, int thread_id)
 {
 	int task_id = *(int*)data;
 	if (task_id > 8) {
@@ -96,7 +96,6 @@ void CPartition::writeBitmap(HANDLE PHandle)
 	bytesInVolume = volumeClusters.QuadPart * intToLargeInt(4096).QuadPart;
 
 }
-
 
 void CPartition::readPartition()
 {

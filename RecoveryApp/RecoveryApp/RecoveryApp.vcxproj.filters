@@ -24,7 +24,7 @@
     <ClCompile Include="CPartition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Workers.c">
+    <ClCompile Include="Workers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

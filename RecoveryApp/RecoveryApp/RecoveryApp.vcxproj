@@ -89,10 +89,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\cdecl\libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,7 +127,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\cdecl\libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\cdecl\libpthread.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\stdcall\libpthread-stdcall.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\cdecl\libpthread.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\stdcall\libpthread-stdcall.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\static\cdecl\libpthread-static.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\static\cdecl\libpthread-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,7 +150,7 @@
     <ClCompile Include="CPartition.cpp" />
     <ClCompile Include="DeviceManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Workers.c" />
+    <ClCompile Include="Workers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPartition.h" />

@@ -1,3 +1,4 @@
+#pragma once
 #define HAVE_STRUCT_TIMESPEC
 #include <pthread.h>
 #define QUEUE_SIZE 1000000
