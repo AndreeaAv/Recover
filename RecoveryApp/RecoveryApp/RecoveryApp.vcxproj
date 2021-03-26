@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -117,14 +117,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\cdecl\libpthread.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\stdcall\libpthread-stdcall.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\static\cdecl\libpthread-static.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\static\stdcall\libpthread-static-stdcall.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\cdecl\libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
