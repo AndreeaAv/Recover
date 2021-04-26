@@ -1,3 +1,4 @@
 ﻿  CPartition.cpp
-E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(104,8): warning C4101: 'bytesRead': unreferenced local variable
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(110,8): warning C4101: 'bytesRead': unreferenced local variable
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(132,25): warning C4101: 'f': unreferenced local variable
   RecoveryApp.vcxproj -> E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\Debug\RecoveryApp.exe

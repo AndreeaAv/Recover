@@ -1,8 +1,14 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string>
 #include "CPartition.h"
 #include "Utils.h"
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+
+#define BLOCK_SIZE 512
 
 using namespace std;
 
@@ -105,9 +111,9 @@ void CPartition::readPartition()
 	BOOL ret = 0;
 	DWORD dwRet, dwErr, dwBytesRead;
 	__int64 bytesCount;
-	char* buffer = (char*)malloc(4096 * 1024 * sizeof(char));
+	char* buffer = (char*)malloc(BLOCK_SIZE * sizeof(char));
 
-	memset(buffer, 0, 4096 * 1024);
+	memset(buffer, 0, BLOCK_SIZE);
 	wsprintf(drivePath, L"\\\\.\\%c:", partitionLetter);
 
 	HANDLE PHandle = CreateFile(drivePath, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, NULL, NULL);
@@ -121,11 +127,14 @@ void CPartition::readPartition()
 
 	//-----------------------------------------------------------------------
 
-	startWorkers();
+	//startWorkers();
+	FILE* fOut = fopen("data.bin", "wb");
+	std::string::size_type f;
+	int count=0;
 
-	for (bytesCount = 0;bytesCount < bytesInVolume;bytesCount+= 4096 * 1024)
+	for (bytesCount = 0;bytesCount < bytesInVolume;bytesCount+= BLOCK_SIZE)
 	{
-		dwRet = ReadFile(PHandle, buffer, 4096 * 1024, &dwBytesRead, NULL);
+		dwRet = ReadFile(PHandle, buffer, BLOCK_SIZE, &dwBytesRead, NULL);
 		if (dwRet == FALSE) {
 			dwErr = GetLastError();
 
@@ -139,11 +148,30 @@ void CPartition::readPartition()
 			}
 		}
 		else {
-			printf("Bytes Read = %d\n", dwBytesRead);
-			putTask(makeTask(0));
+			//printf("Bytes Read = %d\n", dwBytesRead);
+
+			std::string tmp(buffer, dwBytesRead);
+			const char docStart[] = "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1";
+			const char docStop[] = "\x05\x00\x44\x00\x6F\x00\x63\x00\x75\x00\x6D\x00\x65\x00\x6E\x00\x74\x00\x53\x00\x75\x00\x6D\x00\x6D\x00\x61\x00\x72\x00\x79\x00";
+			//const char docStop[] = "\x05\x00\x44\x00\x6F\x00\x63\x00";
+			std::string stop(docStop, 16);
+
+
+			if (tmp.find(stop, 0) != string::npos) {
+				printf("Found it!\n");
+				count++;
+			}			
+
+			fwrite(buffer, sizeof(char), dwBytesRead, fOut);
+			
+
+			//putTask(makeTask(0));
 		}
+
 	}
-	joinWorkerThreads();
+	printf("Count: %d", count);
+	fclose(fOut);
+	//joinWorkerThreads();
 	CloseHandle(PHandle);
 
 }
