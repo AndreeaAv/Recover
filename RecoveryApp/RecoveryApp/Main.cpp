@@ -14,8 +14,8 @@ int main() {
 	printf("Choose partition to recover: ");
 	scanf("%c", &partLetter);
 	chosenPartition.setPartitionLetter(partLetter);
-	chosenPartition.readPartition();
-
+	chosenPartition.readAndRecover();
+	printf("finished");
 	_getch();
 	return 0;
 }

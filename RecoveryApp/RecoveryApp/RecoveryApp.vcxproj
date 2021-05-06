@@ -90,12 +90,12 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\include;C:\Users\Andreea\miniconda3\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\cdecl\libpthread.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\cdecl\libpthread.lib;C:\Users\Andreea\miniconda3\libs\python3.lib;C:\Users\Andreea\miniconda3\libs\python36.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,14 +120,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andreea\miniconda3\envs\fifty2\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\cdecl\libpthread.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\dynamic\stdcall\libpthread-stdcall.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\cdecl\libpthread.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\dynamic\stdcall\libpthread-stdcall.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\x64\Debug\static\cdecl\libpthread-static.lib;E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\packages\pthreads.2.9.1.4\build\native\lib\v100\Win32\Debug\static\cdecl\libpthread-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\Andreea\miniconda3\envs\fifty2\libs\python36.lib;C:\Users\Andreea\miniconda3\envs\fifty2\libs\_tkinter.lib;C:\Users\Andreea\miniconda3\envs\fifty2\libs\python3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,15 +148,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CPartition.cpp" />
+    <ClCompile Include="CRecover.cpp" />
     <ClCompile Include="DeviceManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Workers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPartition.h" />
+    <ClInclude Include="CRecover.h" />
     <ClInclude Include="DeviceManager.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Workers.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

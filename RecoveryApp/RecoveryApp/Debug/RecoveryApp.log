@@ -1,4 +1,20 @@
 ﻿  CPartition.cpp
-E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(110,8): warning C4101: 'bytesRead': unreferenced local variable
-E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(132,25): warning C4101: 'f': unreferenced local variable
-  RecoveryApp.vcxproj -> E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\Debug\RecoveryApp.exe
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(133,12): warning C4101: 'pInt': unreferenced local variable
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(112,8): warning C4101: 'bytesRead': unreferenced local variable
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\CPartition.cpp(145,25): warning C4101: 'f': unreferenced local variable
+  DeviceManager.cpp
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(72,21): warning C4018: '<': signed/unsigned mismatch
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'LONGLONG'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): message : consider using '%llu' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(124,9): message : consider using '%I64u' in the format string
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(152,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(153,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'LARGE_INTEGER'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(154,10): warning C4477: 'printf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 1 has type 'GUID'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\RecoveryApp\DeviceManager.cpp(210,18): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
+CPartition.obj : error LNK2019: unresolved external symbol __imp__Py_Initialize referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+CPartition.obj : error LNK2019: unresolved external symbol __imp__Py_Finalize referenced in function "public: void __thiscall CPartition::readPartition(void)" (?readPartition@CPartition@@QAEXXZ)
+C:\Users\Andreea\miniconda3\libs\python3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Andreea\miniconda3\libs\python36.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+E:\Stuff\doxs\ATM\Anul 4\Licenta\Recover\RecoveryApp\Debug\RecoveryApp.exe : fatal error LNK1120: 2 unresolved externals

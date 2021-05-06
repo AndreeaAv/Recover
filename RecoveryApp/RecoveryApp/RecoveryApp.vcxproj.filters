@@ -24,7 +24,7 @@
     <ClCompile Include="CPartition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Workers.cpp">
+    <ClCompile Include="CRecover.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="CPartition.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Workers.h">
+    <ClInclude Include="CRecover.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
