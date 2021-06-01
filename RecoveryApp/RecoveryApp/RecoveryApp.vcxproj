@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
+	  <keyword>QtVS_v302</keyword>
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{78703b82-79e7-4da7-979f-a67b71be13d9}</ProjectGuid>

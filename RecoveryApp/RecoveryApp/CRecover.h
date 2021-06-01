@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <string>
+#include "CPartition.h"
 #pragma once
 
 
@@ -14,10 +15,11 @@ class CRecover {
 private:
 	
 public:
+	//To do: Citeste tipurile de fisier si semnaturile din fisier
 	file files[4];
 	CRecover();
 
-	int recover(char* bitmapFile, HANDLE dataHandle , char** types);
+	int recover(CPartition chosenPartition, int types);
 
 
 };

@@ -53,9 +53,10 @@ void CPartition::search(void* data, int thread_id)
 CPartition::CPartition()
 {
 	bitmapFile = L"bitmap.bin";
+	writeBitmap();
 }
 
-void CPartition::writeBitmap(HANDLE PHandle)
+void CPartition::writeBitmap()
 {
 	HANDLE bmFile;
 	BOOL retFile;
@@ -72,6 +73,16 @@ void CPartition::writeBitmap(HANDLE PHandle)
 
 	BitmapSize = 4096 * 100 + sizeof(LARGE_INTEGER) * 2;
 	bitmapBuff = (VOLUME_BITMAP_BUFFER*)malloc(BitmapSize);
+
+	TCHAR drivePath[8];
+	wsprintf(drivePath, L"\\\\.\\%c:", partitionLetter);
+
+	HANDLE PHandle = CreateFile(drivePath, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, NULL, NULL);
+
+	if (PHandle == INVALID_HANDLE_VALUE) {
+		printf("Source file not opened. Error %u", GetLastError());
+		return;
+	}
 
 	//Create bitmap File
 	bmFile = CreateFile(bitmapFile.c_str(), GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, CREATE_ALWAYS, 0, NULL);
@@ -97,28 +108,6 @@ void CPartition::writeBitmap(HANDLE PHandle)
 
 	}
 	CloseHandle(bmFile);
-
-}
-
-void CPartition::readAndRecover()
-{
-	TCHAR drivePath[8];
-	wsprintf(drivePath, L"\\\\.\\%c:", partitionLetter);
-
-	HANDLE PHandle = CreateFile(drivePath, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, NULL, NULL);
-
-	if (PHandle == INVALID_HANDLE_VALUE) {
-		printf("Source file not opened. Error %u", GetLastError());
-		return;
-	}
-
-	writeBitmap(PHandle);
-	char* bitmapName = new char[255];
-	sprintf(bitmapName, "%ls", bitmapFile.c_str());
-
-	CRecover* recoverer = new CRecover();
-	recoverer->recover(bitmapName, PHandle, 0);
-	
 	CloseHandle(PHandle);
 
 }
